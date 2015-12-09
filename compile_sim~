@@ -1,0 +1,3 @@
+vlib work
+vlog *.v
+vsim +nowarnTSCALE -c  edt_top_blockB_v_ctl
