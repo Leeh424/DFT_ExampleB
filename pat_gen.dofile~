@@ -3,7 +3,7 @@ set_context patterns -scan
 read_cell_library adk.atpg
 read_verilog edt_gate_noscan_nocore_lockup.v
 read_verilog gate_scan_5.v
-set_current_design piccpu
+set_current_design edt_top
 
 
 set_edt_instances -edt_logic_top edt_i
@@ -11,7 +11,7 @@ set_edt_instances -decompressor  edt_decompressor_i
 set_edt_instances -compactor     edt_compactor_i
 
 
-add_scan_groups grp1 ../generated/created_edt.testproc
+add_scan_groups grp1 ./created_edt.testproc
 add_scan_chains -internal chain1 grp1 /piccpu_i/edt_si1 /piccpu_i/edt_so1
 add_scan_chains -internal chain2 grp1 /piccpu_i/edt_si2 /piccpu_i/edt_so2
 add_scan_chains -internal chain3 grp1 /piccpu_i/edt_si3 /piccpu_i/edt_so3
@@ -26,7 +26,7 @@ add_pin_constraints edt_clock C0
 // Inconsistency between the EDT settings and the EDT logic may
 // lead to DRC violations and invalid patterns.
 
-set_edt_options -channels 1 -longest_chain_range 25 500 -ip_version 6 -decompressor_size 12 -injectors_per_channel 6 -scan_chains
+set_edt_options on -channels 1 -longest_chain_range 25 500 -ip_version 6 -decompressor_size 12 -injectors_per_channel 6 -scan_chains
  5 -compactor_type xpress -lockup off -bypass_chain_change_edge on
 
 set_decompressor_connections -channel 1 -taps 1  3  5  11  9  7
