@@ -11,7 +11,7 @@ set_edt_instances -decompressor  edt_decompressor_i
 set_edt_instances -compactor     edt_compactor_i
 
 
-add_scan_groups grp1 ../generated/created_edt.testproc
+add_scan_groups grp1 ./created_edt.testproc
 add_scan_chains -internal chain1 grp1 /piccpu_i/edt_si1 /piccpu_i/edt_so1
 add_scan_chains -internal chain2 grp1 /piccpu_i/edt_si2 /piccpu_i/edt_so2
 add_scan_chains -internal chain3 grp1 /piccpu_i/edt_si3 /piccpu_i/edt_so3
