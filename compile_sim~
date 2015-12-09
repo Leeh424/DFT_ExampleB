@@ -1,3 +1,3 @@
 vlib work
 vlog *.v
-vsim +nowarnTSCALE -c  edt_top_blockB_v_ctl
+vsim +nowarnTSCALE -c -do "run -all"  edt_top_blockB_v_ctl
